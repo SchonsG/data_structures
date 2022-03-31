@@ -1,8 +1,8 @@
 def sum(values):
-    if len(values) == 0:
+    if values == []:
         return 0
     else:
-        return values.pop(0) + sum(values)
+        return values[0] + sum(values[1:])
 
 values = [2, 4, 6]
 

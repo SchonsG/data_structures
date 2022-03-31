@@ -1,10 +1,8 @@
-def counter(values, count=0):
-    if len(values) == 0:
-        return count
+def counter(values):
+    if values == []:
+        return 0
     else:
-        values.pop()
-        count += 1
-        return counter(values, count)
+        return 1 + counter(values[1:])
 
 values = [0, 1, 2, 3]
 
