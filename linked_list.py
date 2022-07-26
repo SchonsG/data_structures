@@ -90,6 +90,24 @@ class LinkedList:
 
         raise Exception(f"Node with data {target_node_data} not found")
 
+    def reverse(self):
+        if self.head is None:
+            raise Exception("List is empty")
+
+        if self.head.next is None:
+            return self
+
+        values = []
+
+        for node in self:
+            values.append(node.data)
+
+        values.reverse()
+
+        reversed_linked_list = LinkedList(values)
+
+        return reversed_linked_list
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -121,4 +139,6 @@ if __name__ == "__main__":
 
     my_list.remove_node("f")
     print(my_list)
+
+    print(my_list.reverse())
 
